@@ -1,5 +1,13 @@
 name: "First Workflow file"
-on: push
+on: 
+    push: 
+        branches:
+            - master
+            - main
+    pull_request:
+        branches:
+            - main
+
 
 jobs:
     Hello-all:
@@ -8,7 +16,14 @@ jobs:
             - run: echo "Hello World"
     
     on-push:
+        if: github.event_name == 'push'
         runs-on: ubuntu-latest
         steps:
             - run: npm init -y
             - run: npm install
+
+    on-pull-request:
+        if: github.event_name == 'pull-request'
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "On Pull Request"
