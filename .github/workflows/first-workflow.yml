@@ -4,9 +4,11 @@ on:
         branches:
             - master
             - main
+            - test
     pull_request:
         branches:
             - main
+            - test
 
 
 jobs:
@@ -28,3 +30,4 @@ jobs:
         steps:
             - run: echo "On Pull Request"
             - run: echo "You did good"
+            - run: echo "You did even more good"
