@@ -2,21 +2,13 @@ name: "First Workflow file"
 on: 
     push: 
         branches:
-            - master
             - main
             - test
     pull_request:
         branches:
             - main
-            - test
-
 
 jobs:
-    Hello-all:
-        runs-on: ubuntu-latest
-        steps:
-            - run: echo "Hello World"
-    
     on-push:
         if: github.event_name == 'push'
         runs-on: ubuntu-latest
