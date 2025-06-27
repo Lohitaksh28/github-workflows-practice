@@ -28,3 +28,4 @@ jobs:
         steps:
             - run: echo "On Pull Request"
             - run: echo "You did good"
+            - run: echo "You did even more good"
