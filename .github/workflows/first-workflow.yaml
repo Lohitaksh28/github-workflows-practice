@@ -13,4 +13,5 @@ jobs:
     on-push:
         runs-on: ubuntu-latest
         steps:
+            - run: npm init -y
             - run: npm install
