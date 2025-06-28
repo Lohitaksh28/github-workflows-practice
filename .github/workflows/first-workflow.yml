@@ -7,6 +7,8 @@ on:
     pull_request:
         branches:
             - main
+    schedule:
+        - cron: "0 10 * * 2,4"
 
 jobs:
     on-push:
@@ -23,3 +25,8 @@ jobs:
             - run: echo "On Pull Request"
             - run: echo "You did good"
             - run: echo "You did even more good"
+    on-schedule:
+        if: github.event_name == 'schedule'
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "Set to run on Tuesdays and Thrusdays"
