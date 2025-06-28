@@ -15,8 +15,8 @@ jobs:
         steps:
             - run: npm init -y
 
-    on-pull-request:
-        if: github.event_name == 'pull-request'
+    on-pull_request:
+        if: github.event_name == 'pull_request'
         runs-on: ubuntu-latest
         steps:
             - run: echo "On Pull Request"
